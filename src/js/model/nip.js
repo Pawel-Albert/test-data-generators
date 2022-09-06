@@ -1,5 +1,5 @@
-import {departmentCodeNumber} from './nipConfig.js';
-import {generateRandomInt, addLeadingZeros, randomArrayElement} from '../helpers.js';
+import {departmentCodeNumber} from './nipConfig';
+import {generateRandomInt, addLeadingZeros, randomArrayElement} from '../helpers';
 
 const leadingZeros = 6; // Base on regon with 9 digits
 const controlSumDevider = 11; // Constant value provided by goverment

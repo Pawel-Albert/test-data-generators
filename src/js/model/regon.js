@@ -1,9 +1,9 @@
-import {generateRandomInt, addLeadingZeros} from '../helpers.js';
+import {generateRandomInt, addLeadingZeros} from '../helpers';
 const provinceLeadingZeros = 2; // base on regon with 9 digits
 const leadingZeros = 6; // base on regon with 9 digits
 const controlSumDevider = 11;
 
-export const generateRegon = element => {
+export const generateRegon = () => {
   const provinceCode = addLeadingZeros(
     generateRandomInt(0, 48) * 2 + 1,
     provinceLeadingZeros
