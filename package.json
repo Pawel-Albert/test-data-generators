@@ -1,0 +1,28 @@
+{
+  "name": "generators",
+  "version": "1.0.0",
+  "description": "simple data generator for test purposes",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pawel-Albert/test-data-generators.git"
+  },
+  "author": "Paweł Wojciechowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pawel-Albert/test-data-generators/issues"
+  },
+  "homepage": "https://github.com/Pawel-Albert/test-data-generators#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  }
+}
