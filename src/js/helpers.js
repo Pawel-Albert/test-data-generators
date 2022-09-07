@@ -13,14 +13,19 @@ export const genDataOnElement = (fnName, el) => {
   el.innerHTML = fnName();
 };
 
-export const copyTextHandler = (element, selectedEl) => {
-  const text = element.innerText;
+export const getRandomKey = object => {
+  const keys = Object.keys(object);
+  return keys[Math.floor(Math.random() * keys.length)];
+};
+
+export const copyTextHandler = (selectedEl, displayedElement) => {
+  const text = selectedEl.innerText;
 
   navigator.clipboard.writeText(text).then(
     () => {
-      selectedEl.classList.add('show-message');
+      displayedElement.classList.add('show-message');
       setTimeout(() => {
-        selectedEl.classList.remove('show-message');
+        displayedElement.classList.remove('show-message');
       }, 900);
     },
     () => {

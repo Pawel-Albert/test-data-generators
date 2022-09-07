@@ -8,7 +8,7 @@ export const generateNip = () => {
   const randomDeparmentCodeNumber = randomArrayElement(departmentCodeNumber);
   const nipRandomPart = addLeadingZeros(generateRandomInt(0, 999999), leadingZeros);
   const core = randomDeparmentCodeNumber + nipRandomPart;
-  const controleModulo =
+  const controlDigit =
     (core[0] * 6 +
       core[1] * 5 +
       core[2] * 7 +
@@ -19,6 +19,6 @@ export const generateNip = () => {
       core[7] * 6 +
       core[8] * 7) %
     controlSumDevider;
-  if (controleModulo == 10) return generateNip();
-  return core + controleModulo;
+  if (controlDigit == 10) return generateNip();
+  return core + controlDigit;
 };

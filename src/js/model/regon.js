@@ -1,4 +1,5 @@
 import {generateRandomInt, addLeadingZeros} from '../helpers';
+
 const provinceLeadingZeros = 2; // base on regon with 9 digits
 const leadingZeros = 6; // base on regon with 9 digits
 const controlSumDevider = 11;
@@ -10,7 +11,7 @@ export const generateRegon = () => {
   );
   const regonRandomPart = addLeadingZeros(generateRandomInt(0, 999999), leadingZeros);
   const core = provinceCode + regonRandomPart + '';
-  const controleModulo =
+  const controlDigit =
     (core[0] * 8 +
       core[1] * 9 +
       core[2] * 2 +
@@ -20,6 +21,6 @@ export const generateRegon = () => {
       core[6] * 6 +
       core[7] * 7) %
     controlSumDevider;
-  const controleValue = controleModulo == 10 ? 0 : controleModulo;
+  const controleValue = controlDigit == 10 ? 0 : controlDigit;
   return core + controleValue;
 };
