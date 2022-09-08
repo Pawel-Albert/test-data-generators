@@ -13,6 +13,10 @@ export const genDataOnElement = (fnName, el) => {
   el.innerHTML = fnName();
 };
 
+//Todo : Make more general function to work both with pesel/ibn function as others
+export const genDataOnElementPesel = (fnName, el) => {
+  el.innerHTML = fnName;
+};
 export const getRandomKey = object => {
   const keys = Object.keys(object);
   return keys[Math.floor(Math.random() * keys.length)];
