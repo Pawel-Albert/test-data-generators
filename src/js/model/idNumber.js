@@ -1,9 +1,10 @@
 import {generateRandomInt, addLeadingZeros, getRandomKey} from '../helpers';
-import {letersToIntigiersMap} from './idNumberConfig';
-
-const controlSumDevider = 10;
-const numberOfLeters = 3; // Proper Id contains 3 leters at the beginign
-const leadingZeros = 5;
+import {
+  letersToIntigiersMap,
+  controlSumDevider,
+  numberOfLeters,
+  leadingZeros
+} from './idNumberConfig';
 
 export const generateIdNumber = () => {
   let randomThreeLeters = [];
@@ -23,6 +24,3 @@ export const generateIdNumber = () => {
     controlSumDevider;
   return randomThreeLeters.join('') + controlDigit + idNumberRandomPart + '';
 };
-const test = generateIdNumber();
-
-console.log(test);

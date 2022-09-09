@@ -46,7 +46,7 @@ $success: #7952b3;
 @import '~bootstrap/scss/popover';
 // @import "~bootstrap/scss/carousel";
 // @import "~bootstrap/scss/spinners";
-@import '~bootstrap/scss/offcanvas'; // Requires transitions
+//@import '~bootstrap/scss/offcanvas'; // Requires transitions
 // @import "~bootstrap/scss/placeholders";
 
 // Helpers
@@ -208,10 +208,10 @@ body {
 
 #copy-scs {
   position: absolute;
-  bottom: 200px;
+  bottom: 250px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #197aa0;
+  background-color: #0c5b7a;
   color: rgb(255, 255, 255);
   padding: 16px 32px;
   font-size: 24px;

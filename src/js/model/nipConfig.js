@@ -46,3 +46,6 @@ export const departmentCodeNumber = [
   964, 965, 966, 967, 968, 969, 971, 972, 973, 974, 975, 976, 977, 978, 979, 981, 982,
   983, 984, 985, 986, 987, 988, 989, 991, 992, 993, 994, 995, 996, 997, 998
 ];
+
+export const leadingZeros = 6; // Base on regon with 9 digits
+export const controlSumDevider = 11; // Constant value provided by goverment

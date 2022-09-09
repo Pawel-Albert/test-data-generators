@@ -4,15 +4,15 @@ import {
   getDatePartPesel,
   timeStampToLocaleDate,
   controlDigit,
-  peselControlConstants
+  peselControlConstants,
+  leadingZeros
 } from './peselConfig';
-const leadingZeros = 3;
 
 export const generatePesel = sex => {
-  const genTimeStamp = randomTimeStamp();
-  const datePart = getDatePartPesel(timeStampToLocaleDate(genTimeStamp));
-  const genRandomPart = addLeadingZeros(generateRandomInt(0, 999), leadingZeros);
-  const genSexFieldPart =
+  const timeStamp = randomTimeStamp();
+  const datePart = getDatePartPesel(timeStampToLocaleDate(timeStamp));
+  const randomPart = addLeadingZeros(generateRandomInt(0, 999), leadingZeros);
+  const sexFieldPart =
     sex === 'both'
       ? generateRandomInt(0, 9)
       : sex === 'male'
@@ -20,7 +20,7 @@ export const generatePesel = sex => {
       : generateRandomInt(0, 4) * 2;
   const controlDigitValue = controlDigit(
     peselControlConstants,
-    datePart + genRandomPart + genSexFieldPart
+    datePart + randomPart + sexFieldPart
   );
-  return datePart + genRandomPart + genSexFieldPart + controlDigitValue;
+  return datePart + randomPart + sexFieldPart + controlDigitValue;
 };

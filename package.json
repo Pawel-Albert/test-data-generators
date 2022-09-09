@@ -1,10 +1,10 @@
 {
   "name": "generators",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple data generator for test purposes",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "parcel index.html --no-hmr",
+    "build": "parcel build index.html --no-hmr --dist-dir ./dist"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/Pawel-Albert/test-data-generators#readme",
   "dependencies": {
-    "bootstrap": "^5.2.0",
-    "lodash": "^4.17.21",
-    "moment": "^2.29.4"
+    "bootstrap": "^5.2.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.7.0",

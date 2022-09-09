@@ -1,8 +1,5 @@
 import {generateRandomInt, addLeadingZeros} from '../helpers';
-
-const provinceLeadingZeros = 2; // base on regon with 9 digits
-const leadingZeros = 6; // base on regon with 9 digits
-const controlSumDevider = 11;
+import {provinceLeadingZeros, leadingZeros, controlSumDevider} from './regonConfig';
 
 export const generateRegon = () => {
   const provinceCode = addLeadingZeros(

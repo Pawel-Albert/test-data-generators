@@ -1,13 +1,10 @@
-import {departmentCodeNumber} from './nipConfig';
+import {departmentCodeNumber, leadingZeros, controlSumDevider} from './nipConfig';
 import {generateRandomInt, addLeadingZeros, randomArrayElement} from '../helpers';
 
-const leadingZeros = 6; // Base on regon with 9 digits
-const controlSumDevider = 11; // Constant value provided by goverment
-
 export const generateNip = () => {
-  const randomDeparmentCodeNumber = randomArrayElement(departmentCodeNumber);
+  const deparmentCodeNumber = randomArrayElement(departmentCodeNumber);
   const nipRandomPart = addLeadingZeros(generateRandomInt(0, 999999), leadingZeros);
-  const core = randomDeparmentCodeNumber + nipRandomPart;
+  const core = deparmentCodeNumber + nipRandomPart;
   const controlDigit =
     (core[0] * 6 +
       core[1] * 5 +

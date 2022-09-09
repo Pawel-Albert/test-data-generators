@@ -7,3 +7,7 @@ const createObjectTwoArrays = (keys, values) => {
   return Object.fromEntries(keys.map((_, i) => [keys[i], values[i]]));
 };
 export const letersToIntigiersMap = createObjectTwoArrays(keys, values);
+
+export const controlSumDevider = 10;
+export const numberOfLeters = 3; // Proper Id contains 3 leters at the beginign
+export const leadingZeros = 5;
