@@ -3066,7 +3066,7 @@ export const leadingZeros = 16;
 export const ibanCountryPrefixCode = '252100'; // Hardcoded as generator is  curently only for PL
 
 // The weird part as the whole IBAN number is really big and there is no elegant way to use modulo on it
-// TODO : This code  can be cleaner but it works as it is- could refactor it later
+// TODO : This code  can be cleaner but it works as it is - could refactor it later
 export const calcControlNumber = num => {
   const fisrtPart = num.slice(0, 10);
   const secondPart = (fisrtPart % 97) + num.slice(10, 20);

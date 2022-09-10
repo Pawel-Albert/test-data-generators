@@ -9,5 +9,6 @@ const createObjectTwoArrays = (keys, values) => {
 export const letersToIntigiersMap = createObjectTwoArrays(keys, values);
 
 export const controlSumDevider = 10;
-export const numberOfLeters = 3; // Proper Id contains 3 leters at the beginign
+export const numberOfLeters = 3; // Proper Id contains 3 letters at the beginning
+
 export const leadingZeros = 5;
