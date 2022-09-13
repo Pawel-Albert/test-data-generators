@@ -9,7 +9,7 @@ import {
 export const generateIdNumber = () => {
   let randomThreeLeters = [];
   for (let i = 1; i <= numberOfLeters; i++) {
-    randomThreeLeters.push(getRandomKey(letersToIntigiersMap));
+    randomThreeLeters = [...randomThreeLeters, getRandomKey(letersToIntigiersMap)];
   }
   const idNumberRandomPart = addLeadingZeros(generateRandomInt(0, 99999), leadingZeros);
   const controlDigit =
