@@ -1,6 +1,6 @@
 import {generateRandomInt} from '../helpers';
 export const sex = 'both'; // Hardcoded - later when UI will be changed this will not be static value
-export const leadingZeros = 3;
+export const LEADING_ZEROS = 3;
 // TODO : For learning purposes later implement few options on UI to let user pick age, exact date sex etc.
 
 export const randomTimeStamp = () =>
@@ -35,7 +35,7 @@ export const getDatePartPesel = date => {
   );
 };
 
-export const peselControlConstants = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
+export const PESEL_CONTROL_CONSTANTS = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
 
 export const controlDigit = (weights, string) => {
   const stringToArray = [...string];

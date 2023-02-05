@@ -1,9 +1,9 @@
-import {departmentCodeNumber, leadingZeros, controlSumDevider} from './nipConfig';
+import {DEPERTMENT_CODE_NUMBER, LEADING_ZEROS, CONTROL_SUM_DEVIDER} from './nipConfig';
 import {generateRandomInt, addLeadingZeros, randomArrayElement} from '../helpers';
 
 export const generateNip = () => {
-  const deparmentCodeNumber = randomArrayElement(departmentCodeNumber);
-  const nipRandomPart = addLeadingZeros(generateRandomInt(0, 999999), leadingZeros);
+  const deparmentCodeNumber = randomArrayElement(DEPERTMENT_CODE_NUMBER);
+  const nipRandomPart = addLeadingZeros(generateRandomInt(0, 999999), LEADING_ZEROS);
   const core = deparmentCodeNumber + nipRandomPart;
   const controlDigit =
     (core[0] * 6 +
@@ -15,7 +15,7 @@ export const generateNip = () => {
       core[6] * 5 +
       core[7] * 6 +
       core[8] * 7) %
-    controlSumDevider;
+    CONTROL_SUM_DEVIDER;
   if (controlDigit == 10) return generateNip();
   return core + controlDigit;
 };

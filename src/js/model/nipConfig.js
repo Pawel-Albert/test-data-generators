@@ -1,5 +1,5 @@
 // Short codes for each tax office departments in Poland (3 digits)
-export const departmentCodeNumber = [
+export const DEPERTMENT_CODE_NUMBER = [
   101, 102, 103, 104, 105, 106, 107, 108, 109, 111, 112, 113, 114, 115, 116, 117, 118,
   119, 121, 122, 123, 124, 125, 126, 127, 128, 129, 131, 132, 133, 134, 135, 136, 137,
   138, 139, 141, 142, 143, 144, 145, 146, 147, 148, 149, 151, 152, 153, 154, 155, 156,
@@ -47,5 +47,5 @@ export const departmentCodeNumber = [
   983, 984, 985, 986, 987, 988, 989, 991, 992, 993, 994, 995, 996, 997, 998
 ];
 
-export const leadingZeros = 6; // Base on regon with 9 digits
-export const controlSumDevider = 11; // Constant value provided by goverment
+export const LEADING_ZEROS = 6; // Base on regon with 9 digits
+export const CONTROL_SUM_DEVIDER = 11; // Constant value provided by goverment

@@ -1,12 +1,12 @@
 import {generateRandomInt, addLeadingZeros} from '../helpers';
-import {provinceLeadingZeros, leadingZeros, controlSumDevider} from './regonConfig';
+import {PROVINCE_LEADING_ZEROS, LEADING_ZEROS, CONTROL_SUM_DEVIDER} from './regonConfig';
 
 export const generateRegon = () => {
   const provinceCode = addLeadingZeros(
     generateRandomInt(0, 48) * 2 + 1,
-    provinceLeadingZeros
+    PROVINCE_LEADING_ZEROS
   );
-  const regonRandomPart = addLeadingZeros(generateRandomInt(0, 999999), leadingZeros);
+  const regonRandomPart = addLeadingZeros(generateRandomInt(0, 999999), LEADING_ZEROS);
   const core = provinceCode + regonRandomPart + '';
   const controlDigit =
     (core[0] * 8 +
@@ -17,7 +17,7 @@ export const generateRegon = () => {
       core[5] * 5 +
       core[6] * 6 +
       core[7] * 7) %
-    controlSumDevider;
+    CONTROL_SUM_DEVIDER;
   const controleValue = controlDigit == 10 ? 0 : controlDigit;
   return core + controleValue;
 };

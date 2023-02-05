@@ -1,21 +1,21 @@
 import {generateRandomInt, addLeadingZeros} from '../helpers';
 import {
-  bankBranchCode,
+  BANK_BRANCH_CODE,
   randomBankCode,
   leadingZeros,
   calcControlNumber,
-  ibanCountryPrefixCode
+  IBAN_COUNTRY_PREFIX_CODE
 } from './IbanConfig';
 
 export const generateIban = () => {
-  const bankCodePart = randomBankCode(bankBranchCode);
+  const bankCodePart = randomBankCode(BANK_BRANCH_CODE);
   const randomPart = addLeadingZeros(
     generateRandomInt(0, 9999999999999999),
     leadingZeros
   );
   //
   const bankAndRandomPart = bankCodePart + randomPart;
-  const afterSwitching = bankAndRandomPart + ibanCountryPrefixCode;
+  const afterSwitching = bankAndRandomPart + IBAN_COUNTRY_PREFIX_CODE;
   const controlNumber = calcControlNumber(afterSwitching);
 
   return '' + controlNumber + bankAndRandomPart;

@@ -1,5 +1,5 @@
 import {generateRandomInt} from '../helpers';
-export const bankBranchCode = [
+export const BANK_BRANCH_CODE = [
   '10100000',
   '10100039',
   '10100055',
@@ -3062,8 +3062,8 @@ export const bankBranchCode = [
 ];
 
 export const randomBankCode = array => array[generateRandomInt(0, array.length)];
-export const leadingZeros = 16;
-export const ibanCountryPrefixCode = '252100'; // Hardcoded as generator is  curently only for PL
+export const LEADING_ZEROS = 16;
+export const IBAN_COUNTRY_PREFIX_CODE = '252100'; // Hardcoded as generator is  curently only for PL
 
 // The weird part as the whole IBAN number is really big and there is no elegant way to use modulo on it
 // TODO : This code  can be cleaner but it works as it is - could refactor it later
