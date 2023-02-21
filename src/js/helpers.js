@@ -21,15 +21,29 @@ export const getRandomKey = object => {
 export const copyTextHandler = (selectedEl, displayedElement) => {
   const text = selectedEl.innerText;
 
-  navigator.clipboard.writeText(text).then(
-    () => {
-      displayedElement.classList.add('show-message');
-      setTimeout(() => {
-        displayedElement.classList.remove('show-message');
-      }, 900);
-    },
-    () => {
-      console.error('Error while writing to the clipboard');
-    }
-  );
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(
+      () => {
+        displayedElement.classList.add('show-message');
+        setTimeout(() => {
+          displayedElement.classList.remove('show-message');
+        }, 900);
+      },
+      () => {
+        console.error('Error while writing to the clipboard');
+      }
+    );
+  } else {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+
+    displayedElement.classList.add('show-message');
+    setTimeout(() => {
+      displayedElement.classList.remove('show-message');
+    }, 900);
+  }
 };
